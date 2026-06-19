@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Beam Calculator - ToolLab</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Beam Calculator</h1>
+</header>
+
+<main>
+
+<div class="container">
+
+  <div class="card">
+
+    <label>Span (m)</label><br>
+    <input type="number" id="L"><br><br>
+
+    <label>Load (kN)</label><br>
+    <input type="number" id="P"><br><br>
+
+    <button onclick="calc()">Calculate</button>
+
+    <h2 id="result"></h2>
+
+  </div>
+
+</div>
+
+</main>
+
+<script>
+function calc() {
+  let L = +document.getElementById("L").value;
+  let P = +document.getElementById("P").value;
+
+  let M = (P * L) / 4;
+
+  document.getElementById("result").innerText =
+    "Max Moment: " + M.toFixed(2) + " kNm";
+}
+</script>
+
+</body>
+</html>
