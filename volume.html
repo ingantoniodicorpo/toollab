@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Concrete Volume Calculator</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Concrete Volume Calculator</h1>
+</header>
+
+<main>
+
+  <div class="container">
+
+    <div class="card">
+
+      <label>Length (m)</label><br>
+      <input type="number" id="L"><br><br>
+
+      <label>Width (m)</label><br>
+      <input type="number" id="W"><br><br>
+
+      <label>Height (m)</label><br>
+      <input type="number" id="H"><br><br>
+
+      <button onclick="calc()">Calculate</button>
+
+      <h2 id="result"></h2>
+
+    </div>
+
+  </div>
+
+</main>
+
+<script>
+function calc() {
+  let L = +document.getElementById("L").value;
+  let W = +document.getElementById("W").value;
+  let H = +document.getElementById("H").value;
+
+  let V = L * W * H;
+
+  document.getElementById("result").innerText =
+    "Volume: " + V.toFixed(2) + " m³";
+}
+</script>
+
+</body>
+</html>
